@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body id="j-body">
+
+</body>
+<script src="../bower_components/regularjs/dist/regular.js"></script>
+<script src="../bower_components/nej/src/define.js?pro=/car-game-regular/regular/javascript/"></script>
+<script>
+    NEJ.define(['pro/game/game'],function(Game){
+        var game = new Game();
+        game.$inject('#j-body');
+    })
+</script>
+
+</html>

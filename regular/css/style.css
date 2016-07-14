@@ -1,0 +1,18 @@
+body{
+    background: #000;
+}
+.roadbed{
+    width: 480px;
+    height: 800px;
+    margin: 0 auto;
+    border: 10px #fff solid;
+    background: url("../resource/road.png") no-repeat;
+    position: relative;
+}
+
+.road{
+    width: 320px;
+    height: 800px;
+    background: red;
+    margin: 0 auto;
+}
