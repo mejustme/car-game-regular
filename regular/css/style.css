@@ -2,17 +2,64 @@ body{
     background: #000;
 }
 .roadbed{
+    position: relative;
+    overflow: hidden;
+    border-left: 10px #fff solid;
+    border-right: 10px #fff solid;
+    margin: 0 auto;
     width: 480px;
     height: 800px;
-    margin: 0 auto;
-    border: 10px #fff solid;
-    background: url("../resource/road.png") no-repeat;
-    position: relative;
+}
+.road{
+    /* 整体移动 */
+    width: 480px;
+    height: 1600px;
+    margin: 0 auto; /*上拉图片才能不露口*/
+    margin-top: -800px;
+    background: url("../resource/road.png") repeat-y; /*y方向重复*/
+    transform:translateZ(0);  /*启动硬件加速*/
+
+}
+.road-run{
+    animation: roadRun 5s linear infinite;
 }
 
-.road{
+@keyframes roadRun {
+    0% {
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(800px);  /*高度须等于图片高度，这样才不会有卡顿现象*/
+    }
+}
+
+.real-road{
     width: 320px;
     height: 800px;
-    background: red;
+    /*background: red;*/
     margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.player-car{
+    background: url("../resource/hero.png") no-repeat;
+    width: 80px;
+    height: 165px;
+    position: absolute;
+    margin: 0 27px;
+    bottom: 28px;
+    left: 0;
+    transition: all .8s cubic-bezier(0, -0.04, 0, 1.24);
+}
+
+.player-car-left{
+   left: 0;
+}
+
+.player-car-right{
+    left: 185px;
 }

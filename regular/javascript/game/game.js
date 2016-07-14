@@ -8,7 +8,7 @@
  * ------------------------------------------
  */
 
-NEJ.define(['regular!./game.html'],function(tpl){
+NEJ.define(['regular!./game.html','pro/playerCar/playerCar'],function(tpl){
     var Game =  Regular.extend({
         name: 'game',
         template: tpl,
