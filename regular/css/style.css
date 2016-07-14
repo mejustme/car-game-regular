@@ -2,13 +2,17 @@ body{
     background: #000;
 }
 .roadbed{
-    position: relative;
+    position: absolute;
     overflow: hidden;
     border-left: 10px #fff solid;
     border-right: 10px #fff solid;
-    margin: 0 auto;
+    margin: auto;
     width: 480px;
     height: 800px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 .road{
     /* 整体移动 */
@@ -21,7 +25,7 @@ body{
 
 }
 .road-run{
-    animation: roadRun 5s linear infinite;
+    animation: roadRun 2s linear infinite;
 }
 
 @keyframes roadRun {
@@ -37,7 +41,7 @@ body{
     width: 320px;
     height: 800px;
     /*background: red;*/
-    margin: 0 auto;
+    margin: auto;
     position: absolute;
     left: 0;
     right: 0;
@@ -55,6 +59,14 @@ body{
     left: 0;
     transition: all 1s cubic-bezier(0, -0.04, 0, 1.24);
 }
+.light{
+    background: url("../resource/carLight.png") no-repeat;
+    position: absolute;
+    left: -5px;
+    top: -26px;
+    width: 100px;
+    height: 50px;
+}
 
 .player-car-left{
    left: 0;
@@ -62,4 +74,24 @@ body{
 
 .player-car-right{
     left: 185px;
+}
+
+.enemy-car{
+
+}
+.enemy1{
+    background: url("../resource/car0.png") no-repeat;
+    width: 80px;
+    height: 165px;
+    margin: 0 27px;
+    position: absolute;
+    top: -200px; /*车隐藏距离*/
+    animation: speed0 4s linear infinite;  /*控制好车下来的速度，一定要慢于路往下来的速度，这样车辆才是真实向前开*/
+    left: 185px;
+}
+
+@keyframes speed0 {
+    100%{
+        transform: translateY(1000px); /*大于车隐藏距离+图片窗口高度*/
+    }
 }

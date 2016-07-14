@@ -172,7 +172,7 @@ body{
 	-webkit-animation:speed 2.5s linear;
 }
 @-webkit-keyframes speed{
-	100%{ -webkit-transform:translateY(1000px);}
+	100%{ -webkit-transform:translateY(400px);}
 }
 .enemy.loc0{
 	left:0;

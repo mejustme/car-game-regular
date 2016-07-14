@@ -53,10 +53,10 @@ var GameBoard = React.createClass({
 
         if(state){
             Tick = setInterval(function(){
-                trs = window.getComputedStyle(that.refs.enemy,null).getPropertyValue("transform");
-                dis = trs.split(",")[5].replace(")","");
-                heroLoc = that.state.heroLoc;
-                enemyLoc = that.state.enemyLoc;
+                trs = window.getComputedStyle(that.refs.enemy,null).getPropertyValue("transform"); //关键，原生读取计算属性，只读实时！
+                dis = trs.split(",")[5].replace(")",""); //获取实时的位置，martri是矩阵 （a,b,c,d,e,f）=> (放大x,tanx,tany,放大y,移动x,移动y)
+                heroLoc = that.state.heroLoc; //玩家左右位置
+                enemyLoc = that.state.enemyLoc; //破坏车左右位置
                 if(dis>crash &&dis<(crash+220) && heroLoc == enemyLoc){
                     if(that.state.superMode ==1){
                         that.superBuff();

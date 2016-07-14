@@ -14,12 +14,13 @@ NEJ.define(['regular!./playerCar.html'],function(tpl){
         template: tpl,
         init: function(){
             window.addEventListener("keydown", this.carHandle.bind(this), false);
-            window.addEventListener("devicemotion", function(event) {
-            var eventaccelerationIncludingGravity = event.accelerationIncludingGravity;
-                if(eventaccelerationIncludingGravity.x < -1){
+            window.addEventListener("devicemotion", function(event) {  //加速度感应
+                var eventaccelerationIncludingGravity = event.accelerationIncludingGravity; //考虑重力的加速度，x/y/z
+
+                if(eventaccelerationIncludingGravity.x < -1.5){
                     this.data.toRight = false;
 
-                }else if(eventaccelerationIncludingGravity.x > 1){
+                }else if(eventaccelerationIncludingGravity.x > 1.5){
                     this.data.toRight = true;
                 }
                 this.$update();

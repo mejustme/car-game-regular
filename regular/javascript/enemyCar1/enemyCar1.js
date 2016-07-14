@@ -4,15 +4,20 @@
  * 窗体控件实现文件
  * @version  1.0
  * @author   陈钦辉(hzchenqinhui@corp.netease.com)
- * @path  pro/game/game
+ * @path  pro/org/ui/editClass/classAttach
  * ------------------------------------------
  */
 
-NEJ.define(['regular!./game.html','pro/playerCar/playerCar','pro/enemyCar1/enemyCar1'],function(tpl){
-    var Game =  Regular.extend({
-        name: 'game',
+NEJ.define(['regular!./enemyCar1.html'],function(tpl){
+    var EnemyCar1 =  Regular.extend({
+        name: 'enemyCar1',
         template: tpl,
-        data: {}
+        init: function(){
+
+        },
+        data: {
+
+        }
     });
-    return Game;
+    return EnemyCar1;
 });
